@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {CalculatorComponent} from './calculator/calculator.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
