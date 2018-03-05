@@ -1,0 +1,26 @@
+@mixin clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+app-calculator {
+  background-color: #ffffff;
+  padding-bottom: 1em;
+  position: fixed;
+
+  @include clearfix;
+}
+
+app-shopping-list {
+  overflow: hidden;
+  @include clearfix;
+}
