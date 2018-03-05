@@ -16,11 +16,14 @@ app-calculator {
   background-color: #ffffff;
   padding-bottom: 1em;
   position: fixed;
-
+  display:block;
   @include clearfix;
 }
 
 app-shopping-list {
+  margin-top: 250px;
   overflow: hidden;
+  display: block;
   @include clearfix;
+
 }
