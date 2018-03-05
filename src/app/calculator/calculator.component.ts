@@ -2,12 +2,13 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
-  templateUrl: './calculator.component.html'
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.scss']
 })
 
 export class CalculatorComponent {
   numberClicked: number = 0;
-  operationClicked: string = "+";
+  operationClicked: string = '+';
   totalValue: number = 0;
 
   getNumberClicked() {
@@ -24,17 +25,17 @@ export class CalculatorComponent {
 
   onClickedNumber(event: any) {
     if(this.numberClicked === 0){
-      this.numberClicked = event.target.value;
+      this.numberClicked = Number((<HTMLInputElement>event.target).value);
     } else {
-      this.numberClicked += event.target.value;
+      this.numberClicked += Number((<HTMLInputElement>event.target).value);
     }
   }
 
   onClickedOperator(event: any) {
     if (event.target.value === "+") {
-      this.totalValue = Number(this.totalValue) + Number(this.numberClicked);
+      this.totalValue = this.totalValue + this.numberClicked;
     } else {
-      this.totalValue = Number(this.totalValue) - Number(this.numberClicked);
+      this.totalValue = this.totalValue - this.numberClicked;
     }
     this.numberClicked = 0;
   }
